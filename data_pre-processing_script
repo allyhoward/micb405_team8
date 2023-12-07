@@ -1,0 +1,81 @@
+# Stella Lin
+# MICB 405 Data Pre-Processing on Linux BASH
+# Nov 6, 2023
+
+# Downloading reference genome and annotations using wget
+wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/433/935/GCF_001433935.1_IRGSP-1.0/GCF_001433935.1_IRGSP-1.0_cds_from_genomic.fna.gz # genome
+gunzip GCF_001433935.1_IRGSP-1.0_genomic.fna.gz # Unzip reference genome data
+wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/433/935/GCF_001433935.1_IRGSP-1.0/GCF_001433935.1_IRGSP-1.0_genomic.gtf.gz # Annotation file
+gunzip GCF_001433935.1_IRGSP-1.0_genomic.gtf # Unzip annotation file
+
+# Prepare an index for STAR (REFERENCE)
+STAR --runMode genomeGenerate --genomeDir /home/slin_mb23/project/ref_STAR --genomeFastaFiles ~/project/reference/GCF_001433935.1_IRGSP-1.0_genomic.fna --sjdbGTFfile /home/slin_mb23/project/reference/GCF_001433935.1_IRGSP-1.0_genomic.gtf --sjdbOverhang 100 --runThreadN 8
+
+///
+
+# FASTQC - all fastq files were unzipped using gunzip prior to quality check using FASTQC
+## fastq files for each read was downloaded directly to local computer from NCBI
+
+## Control R1
+fastqc SRR12169370_1.fastq SRR12169370_2.fastq
+
+## Control R2
+fastqc SRR12169369_1.fastq SRR12169369_2.fastq 
+
+## Control R3
+fastqc SRR12169368_1.fastq SRR12169368_2.fastq
+
+## Gradient R1
+fastqc SRR12169374_1.fastq SRR12169374_2.fastq
+
+## Gradient R2
+fastqc SRR12169373_1.fastq SRR12169373_2.fastq
+
+## Gradient R3
+gunzip *.fastq.gz
+fastqc SRR12169372_1.fastq SRR12169372_2.fastq
+
+## Low R1
+fastqc SRR12169389_1.fastq SRR12169389_2.fastq 
+
+## Low R2
+fastqc SRR12169388_1.fastq SRR12169388_2.fastq 
+
+## Low R3
+fastqc SRR12169377_1.fastq SRR12169377_2.fastq 
+
+///
+
+# STAR Alignment - used unzipped fastq files to ensure proper alignment
+# Alignment - Control R1
+STAR --genomeDir /home/slin_mb23/project/ref_STAR --readFilesIn ~/project/experimental_reads/control_full_n/control_R1/SRR12169370_1.fastq.gz ~/project/experimental_reads/control_full_n/control_R1/SRR12169370_2.fastq.gz  --readFilesCommand zcat --outFileNamePrefix /home/slin_mb23/project/aln_STAR/control_n1/control_R1 --outSAMtype BAM SortedByCoordinate --runThreadN 8 --quantMode GeneCounts
+
+# Alignment - Control R2
+STAR --genomeDir /home/slin_mb23/project/ref_STAR --readFilesIn ~/project/experimental_reads/control_full_n/control_R2/SRR12169369_1.fastq.gz ~/project/experimental_reads/control_full_n/control_R2/SRR12169369_2.fastq.gz --readFilesCommand zcat --outFileNamePrefix /home/slin_mb23/project/aln_STAR/control_n2/control_R2 --outSAMtype BAM SortedByCoordinate --runThreadN 8 --quantMode GeneCounts
+
+# Alignment - Control R3
+STAR --genomeDir /home/slin_mb23/project/ref_STAR --readFilesIn ~/project/experimental_reads/control_full_n/control_R3/SRR12169368_1.fastq.gz ~/project/experimental_reads/control_full_n/control_R3/SRR12169368_2.fastq.gz --readFilesCommand zcat --outFileNamePrefix /home/slin_mb23/project/aln_STAR/control_n3/control_R3 --outSAMtype BAM SortedByCoordinate --runThreadN 8 --quantMode GeneCounts
+
+///
+
+# Alignment - Gradient R1
+STAR --genomeDir /home/slin_mb23/project/ref_STAR --readFilesIn ~/project/experimental_reads/gradient_n/gradient_R1/SRR12169374_1.fastq.gz ~/project/experimental_reads/gradient_n/gradient_R1/SRR12169374_2.fastq.gz  --readFilesCommand zcat --outFileNamePrefix /home/slin_mb23/project/aln_STAR/gradient_n1/gradient_R1 --outSAMtype BAM SortedByCoordinate --runThreadN 8 --quantMode GeneCounts
+
+# Alignment - Gradient R2
+STAR --genomeDir /home/slin_mb23/project/ref_STAR --readFilesIn ~/project/experimental_reads/gradient_n/gradient_R2/SRR12169373_1.fastq.gz ~/project/experimental_reads/gradient_n/gradient_R2/SRR12169373_2.fastq.gz  --readFilesCommand zcat --outFileNamePrefix /home/slin_mb23/project/aln_STAR/gradient_n2/gradient_R2 --outSAMtype BAM SortedByCoordinate --runThreadN 8 --quantMode GeneCounts
+
+# Alignment - Gradient R3 
+STAR --genomeDir /home/slin_mb23/project/ref_STAR --readFilesIn ~/project/experimental_reads/gradient_n/gradient_R3/SRR12169372_1.fastq.gz ~/project/experimental_reads/gradient_n/gradient_R3/SRR12169372_2.fastq.gz --readFilesCommand zcat --outFileNamePrefix /home/slin_mb23/project/aln_STAR/gradient_n3/gradient_R3 --outSAMtype BAM SortedByCoordinate --runThreadN 8 --quantMode GeneCounts
+
+///
+
+# Alignment - Low R1
+STAR --genomeDir /home/slin_mb23/project/ref_STAR --readFilesIn ~/project/experimental_reads/low_n/low_R1/SRR12169389_1.fastq.gz ~/project/experimental_reads/low_n/low_R1/SRR12169389_2.fastq.gz --readFilesCommand zcat --outFileNamePrefix /home/slin_mb23/project/aln_STAR/low_n1/low_R1 --outSAMtype BAM SortedByCoordinate --runThreadN 8 --quantMode GeneCounts
+
+# Alignment - Low R2
+STAR --genomeDir /home/slin_mb23/project/ref_STAR --readFilesIn ~/project/experimental_reads/low_n/low_R2/SRR12169388_1.fastq.gz ~/project/experimental_reads/low_n/low_R2/SRR12169388_2.fastq.gz --readFilesCommand zcat --outFileNamePrefix /home/slin_mb23/project/aln_STAR/low_n2/low_R2 --outSAMtype BAM SortedByCoordinate --runThreadN 8 --quantMode GeneCounts
+
+# Alignment - Low R3
+STAR --genomeDir /home/slin_mb23/project/ref_STAR --readFilesIn ~/project/experimental_reads/low_n/low_R3/SRR12169377_1.fastq.gz ~/project/experimental_reads/low_n/low_R3/SRR12169377_2.fastq.gz --readFilesCommand zcat --outFileNamePrefix /home/slin_mb23/project/aln_STAR/low_n3/low_R3 --outSAMtype BAM SortedByCoordinate --runThreadN 8 --quantMode GeneCounts
+
+## Aligned three experimental conditions: low nitrogen, high nitrogen, and low to high recovery nitrogen after 24 hour time point
