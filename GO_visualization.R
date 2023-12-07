@@ -4,6 +4,7 @@
 
 ##### All requisite files are in micb405_team8/files/ ####
 # please download all files into the same directory before running the R script
+# Or download the zipped file in micb405_team8
 
 ## Load packages
 library(tidyverse)
