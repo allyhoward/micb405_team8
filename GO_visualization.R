@@ -2,7 +2,7 @@
 # MICB405 GO Term enrichment and visualization
 # Nov 24, 2023
 
-##### All requisite files are in micb405_team8/files/ ####
+##### All requisite files are in micb405_team8/files/GO_files ####
 # please download all files into the same directory before running the R script
 # Or download the zipped file in micb405_team8
 
