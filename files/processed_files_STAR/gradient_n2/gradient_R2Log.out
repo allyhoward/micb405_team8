@@ -1,0 +1,462 @@
+STAR version=STAR_2.5.3a
+STAR compilation time,server,dir=Fri Mar 17 21:26:06 UTC 2017 :/tmp/rna-star-20170317-38397-fiej0y/STAR-2.5.3a/source
+##### DEFAULT parameters:
+versionSTAR                       20201
+versionGenome                     20101   20200   
+parametersFiles                   -   
+sysShell                          -
+runMode                           alignReads
+runThreadN                        1
+runDirPerm                        User_RWX
+runRNGseed                        777
+genomeDir                         ./GenomeDir/
+genomeLoad                        NoSharedMemory
+genomeFastaFiles                  -   
+genomeChainFiles                  -   
+genomeSAindexNbases               14
+genomeChrBinNbits                 18
+genomeSAsparseD                   1
+genomeSuffixLengthMax             18446744073709551615
+genomeFileSizes                   0   
+readFilesIn                       Read1   Read2   
+readFilesCommand                  -   
+readMatesLengthsIn                NotEqual
+readMapNumber                     18446744073709551615
+readNameSeparator                 /   
+inputBAMfile                      -
+bamRemoveDuplicatesType           -
+bamRemoveDuplicatesMate2basesN    0
+limitGenomeGenerateRAM            31000000000
+limitIObufferSize                 150000000
+limitOutSAMoneReadBytes           100000
+limitOutSJcollapsed               1000000
+limitOutSJoneRead                 1000
+limitBAMsortRAM                   0
+limitSjdbInsertNsj                1000000
+outTmpDir                         -
+outTmpKeep                        None
+outStd                            Log
+outReadsUnmapped                  None
+outQSconversionAdd                0
+outMultimapperOrder               Old_2.4
+outSAMtype                        SAM   
+outSAMmode                        Full
+outSAMstrandField                 None
+outSAMattributes                  Standard   
+outSAMunmapped                    None   
+outSAMorder                       Paired
+outSAMprimaryFlag                 OneBestScore
+outSAMreadID                      Standard
+outSAMmapqUnique                  255
+outSAMflagOR                      0
+outSAMflagAND                     65535
+outSAMattrRGline                  -   
+outSAMheaderHD                    -   
+outSAMheaderPG                    -   
+outSAMheaderCommentFile           -
+outBAMcompression                 1
+outBAMsortingThreadN              0
+outSAMfilter                      None   
+outSAMmultNmax                    18446744073709551615
+outSAMattrIHstart                 1
+outSJfilterReads                  All
+outSJfilterCountUniqueMin         3   1   1   1   
+outSJfilterCountTotalMin          3   1   1   1   
+outSJfilterOverhangMin            30   12   12   12   
+outSJfilterDistToOtherSJmin       10   0   5   10   
+outSJfilterIntronMaxVsReadN       50000   100000   200000   
+outWigType                        None   
+outWigStrand                      Stranded   
+outWigReferencesPrefix            -
+outWigNorm                        RPM   
+outFilterType                     Normal
+outFilterMultimapNmax             10
+outFilterMultimapScoreRange       1
+outFilterScoreMin                 0
+outFilterScoreMinOverLread        0.66
+outFilterMatchNmin                0
+outFilterMatchNminOverLread       0.66
+outFilterMismatchNmax             10
+outFilterMismatchNoverLmax        0.3
+outFilterMismatchNoverReadLmax    1
+outFilterIntronMotifs             None
+clip5pNbases                      0   
+clip3pNbases                      0   
+clip3pAfterAdapterNbases          0   
+clip3pAdapterSeq                  -   
+clip3pAdapterMMp                  0.1   
+winBinNbits                       16
+winAnchorDistNbins                9
+winFlankNbins                     4
+winAnchorMultimapNmax             50
+winReadCoverageRelativeMin        0.5
+winReadCoverageBasesMin           0
+scoreGap                          0
+scoreGapNoncan                    -8
+scoreGapGCAG                      -4
+scoreGapATAC                      -8
+scoreStitchSJshift                1
+scoreGenomicLengthLog2scale       -0.25
+scoreDelBase                      -2
+scoreDelOpen                      -2
+scoreInsOpen                      -2
+scoreInsBase                      -2
+seedSearchLmax                    0
+seedSearchStartLmax               50
+seedSearchStartLmaxOverLread      1
+seedPerReadNmax                   1000
+seedPerWindowNmax                 50
+seedNoneLociPerWindow             10
+seedMultimapNmax                  10000
+alignIntronMin                    21
+alignIntronMax                    0
+alignMatesGapMax                  0
+alignTranscriptsPerReadNmax       10000
+alignSJoverhangMin                5
+alignSJDBoverhangMin              3
+alignSJstitchMismatchNmax         0   -1   0   0   
+alignSplicedMateMapLmin           0
+alignSplicedMateMapLminOverLmate    0.66
+alignWindowsPerReadNmax           10000
+alignTranscriptsPerWindowNmax     100
+alignEndsType                     Local
+alignSoftClipAtReferenceEnds      Yes
+alignEndsProtrude                 0   ConcordantPair   
+chimSegmentMin                    0
+chimScoreMin                      0
+chimScoreDropMax                  20
+chimScoreSeparation               10
+chimScoreJunctionNonGTAG          -1
+chimMainSegmentMultNmax           10
+chimJunctionOverhangMin           20
+chimOutType                       SeparateSAMold   
+chimFilter                        banGenomicN   
+chimSegmentReadGapMax             0
+sjdbFileChrStartEnd               -   
+sjdbGTFfile                       -
+sjdbGTFchrPrefix                  -
+sjdbGTFfeatureExon                exon
+sjdbGTFtagExonParentTranscript    transcript_id
+sjdbGTFtagExonParentGene          gene_id
+sjdbOverhang                      100
+sjdbScore                         2
+sjdbInsertSave                    Basic
+quantMode                         -   
+quantTranscriptomeBAMcompression    1
+quantTranscriptomeBan             IndelSoftclipSingleend
+twopass1readsN                    18446744073709551615
+twopassMode                       None
+##### Command Line:
+STAR --genomeDir /home/slin_mb23/project/ref_STAR --readFilesIn /home/slin_mb23/project/experimental_reads/gradient_n/gradient_R2/SRR12169373_1.fastq /home/slin_mb23/project/experimental_reads/gradient_n/gradient_R2/SRR12169373_2.fastq --outFileNamePrefix /home/slin_mb23/project/aln_STAR/gradient_n2/gradient_R2 --outSAMtype BAM SortedByCoordinate --runThreadN 8 --quantMode GeneCounts
+##### Initial USER parameters from Command Line:
+outFileNamePrefix                 /home/slin_mb23/project/aln_STAR/gradient_n2/gradient_R2
+###### All USER parameters from Command Line:
+genomeDir                     /home/slin_mb23/project/ref_STAR     ~RE-DEFINED
+readFilesIn                   /home/slin_mb23/project/experimental_reads/gradient_n/gradient_R2/SRR12169373_1.fastq   /home/slin_mb23/project/experimental_reads/gradient_n/gradient_R2/SRR12169373_2.fastq        ~RE-DEFINED
+outFileNamePrefix             /home/slin_mb23/project/aln_STAR/gradient_n2/gradient_R2     ~RE-DEFINED
+outSAMtype                    BAM   SortedByCoordinate        ~RE-DEFINED
+runThreadN                    8     ~RE-DEFINED
+quantMode                     GeneCounts        ~RE-DEFINED
+##### Finished reading parameters from all sources
+
+##### Final user re-defined parameters-----------------:
+runThreadN                        8
+genomeDir                         /home/slin_mb23/project/ref_STAR
+readFilesIn                       /home/slin_mb23/project/experimental_reads/gradient_n/gradient_R2/SRR12169373_1.fastq   /home/slin_mb23/project/experimental_reads/gradient_n/gradient_R2/SRR12169373_2.fastq   
+outFileNamePrefix                 /home/slin_mb23/project/aln_STAR/gradient_n2/gradient_R2
+outSAMtype                        BAM   SortedByCoordinate   
+quantMode                         GeneCounts   
+
+-------------------------------
+##### Final effective command line:
+STAR   --runThreadN 8   --genomeDir /home/slin_mb23/project/ref_STAR   --readFilesIn /home/slin_mb23/project/experimental_reads/gradient_n/gradient_R2/SRR12169373_1.fastq   /home/slin_mb23/project/experimental_reads/gradient_n/gradient_R2/SRR12169373_2.fastq      --outFileNamePrefix /home/slin_mb23/project/aln_STAR/gradient_n2/gradient_R2   --outSAMtype BAM   SortedByCoordinate      --quantMode GeneCounts   
+
+##### Final parameters after user input--------------------------------:
+versionSTAR                       20201
+versionGenome                     20101   20200   
+parametersFiles                   -   
+sysShell                          -
+runMode                           alignReads
+runThreadN                        8
+runDirPerm                        User_RWX
+runRNGseed                        777
+genomeDir                         /home/slin_mb23/project/ref_STAR
+genomeLoad                        NoSharedMemory
+genomeFastaFiles                  -   
+genomeChainFiles                  -   
+genomeSAindexNbases               14
+genomeChrBinNbits                 18
+genomeSAsparseD                   1
+genomeSuffixLengthMax             18446744073709551615
+genomeFileSizes                   0   
+readFilesIn                       /home/slin_mb23/project/experimental_reads/gradient_n/gradient_R2/SRR12169373_1.fastq   /home/slin_mb23/project/experimental_reads/gradient_n/gradient_R2/SRR12169373_2.fastq   
+readFilesCommand                  -   
+readMatesLengthsIn                NotEqual
+readMapNumber                     18446744073709551615
+readNameSeparator                 /   
+inputBAMfile                      -
+bamRemoveDuplicatesType           -
+bamRemoveDuplicatesMate2basesN    0
+limitGenomeGenerateRAM            31000000000
+limitIObufferSize                 150000000
+limitOutSAMoneReadBytes           100000
+limitOutSJcollapsed               1000000
+limitOutSJoneRead                 1000
+limitBAMsortRAM                   0
+limitSjdbInsertNsj                1000000
+outFileNamePrefix                 /home/slin_mb23/project/aln_STAR/gradient_n2/gradient_R2
+outTmpDir                         -
+outTmpKeep                        None
+outStd                            Log
+outReadsUnmapped                  None
+outQSconversionAdd                0
+outMultimapperOrder               Old_2.4
+outSAMtype                        BAM   SortedByCoordinate   
+outSAMmode                        Full
+outSAMstrandField                 None
+outSAMattributes                  Standard   
+outSAMunmapped                    None   
+outSAMorder                       Paired
+outSAMprimaryFlag                 OneBestScore
+outSAMreadID                      Standard
+outSAMmapqUnique                  255
+outSAMflagOR                      0
+outSAMflagAND                     65535
+outSAMattrRGline                  -   
+outSAMheaderHD                    -   
+outSAMheaderPG                    -   
+outSAMheaderCommentFile           -
+outBAMcompression                 1
+outBAMsortingThreadN              0
+outSAMfilter                      None   
+outSAMmultNmax                    18446744073709551615
+outSAMattrIHstart                 1
+outSJfilterReads                  All
+outSJfilterCountUniqueMin         3   1   1   1   
+outSJfilterCountTotalMin          3   1   1   1   
+outSJfilterOverhangMin            30   12   12   12   
+outSJfilterDistToOtherSJmin       10   0   5   10   
+outSJfilterIntronMaxVsReadN       50000   100000   200000   
+outWigType                        None   
+outWigStrand                      Stranded   
+outWigReferencesPrefix            -
+outWigNorm                        RPM   
+outFilterType                     Normal
+outFilterMultimapNmax             10
+outFilterMultimapScoreRange       1
+outFilterScoreMin                 0
+outFilterScoreMinOverLread        0.66
+outFilterMatchNmin                0
+outFilterMatchNminOverLread       0.66
+outFilterMismatchNmax             10
+outFilterMismatchNoverLmax        0.3
+outFilterMismatchNoverReadLmax    1
+outFilterIntronMotifs             None
+clip5pNbases                      0   
+clip3pNbases                      0   
+clip3pAfterAdapterNbases          0   
+clip3pAdapterSeq                  -   
+clip3pAdapterMMp                  0.1   
+winBinNbits                       16
+winAnchorDistNbins                9
+winFlankNbins                     4
+winAnchorMultimapNmax             50
+winReadCoverageRelativeMin        0.5
+winReadCoverageBasesMin           0
+scoreGap                          0
+scoreGapNoncan                    -8
+scoreGapGCAG                      -4
+scoreGapATAC                      -8
+scoreStitchSJshift                1
+scoreGenomicLengthLog2scale       -0.25
+scoreDelBase                      -2
+scoreDelOpen                      -2
+scoreInsOpen                      -2
+scoreInsBase                      -2
+seedSearchLmax                    0
+seedSearchStartLmax               50
+seedSearchStartLmaxOverLread      1
+seedPerReadNmax                   1000
+seedPerWindowNmax                 50
+seedNoneLociPerWindow             10
+seedMultimapNmax                  10000
+alignIntronMin                    21
+alignIntronMax                    0
+alignMatesGapMax                  0
+alignTranscriptsPerReadNmax       10000
+alignSJoverhangMin                5
+alignSJDBoverhangMin              3
+alignSJstitchMismatchNmax         0   -1   0   0   
+alignSplicedMateMapLmin           0
+alignSplicedMateMapLminOverLmate    0.66
+alignWindowsPerReadNmax           10000
+alignTranscriptsPerWindowNmax     100
+alignEndsType                     Local
+alignSoftClipAtReferenceEnds      Yes
+alignEndsProtrude                 0   ConcordantPair   
+chimSegmentMin                    0
+chimScoreMin                      0
+chimScoreDropMax                  20
+chimScoreSeparation               10
+chimScoreJunctionNonGTAG          -1
+chimMainSegmentMultNmax           10
+chimJunctionOverhangMin           20
+chimOutType                       SeparateSAMold   
+chimFilter                        banGenomicN   
+chimSegmentReadGapMax             0
+sjdbFileChrStartEnd               -   
+sjdbGTFfile                       -
+sjdbGTFchrPrefix                  -
+sjdbGTFfeatureExon                exon
+sjdbGTFtagExonParentTranscript    transcript_id
+sjdbGTFtagExonParentGene          gene_id
+sjdbOverhang                      100
+sjdbScore                         2
+sjdbInsertSave                    Basic
+quantMode                         GeneCounts   
+quantTranscriptomeBAMcompression    1
+quantTranscriptomeBan             IndelSoftclipSingleend
+twopass1readsN                    18446744073709551615
+twopassMode                       None
+----------------------------------------
+
+WARNING: --limitBAMsortRAM=0, will use genome size as RAM limit for BAM sorting
+Finished loading and checking parameters
+Reading genome generation parameters:
+versionGenome                 20201        ~RE-DEFINED
+genomeFastaFiles              /home/slin_mb23/project/reference/GCF_001433935.1_IRGSP-1.0_genomic.fna        ~RE-DEFINED
+genomeSAindexNbases           14     ~RE-DEFINED
+genomeChrBinNbits             18     ~RE-DEFINED
+genomeSAsparseD               1     ~RE-DEFINED
+sjdbOverhang                  100     ~RE-DEFINED
+sjdbFileChrStartEnd           -        ~RE-DEFINED
+sjdbGTFfile                   /home/slin_mb23/project/reference/GCF_001433935.1_IRGSP-1.0_genomic.gtf     ~RE-DEFINED
+sjdbGTFchrPrefix              -     ~RE-DEFINED
+sjdbGTFfeatureExon            exon     ~RE-DEFINED
+sjdbGTFtagExonParentTranscripttranscript_id     ~RE-DEFINED
+sjdbGTFtagExonParentGene      gene_id     ~RE-DEFINED
+sjdbInsertSave                Basic     ~RE-DEFINED
+genomeFileSizes               417923447   3338176359        ~RE-DEFINED
+Genome version is compatible with current STAR version
+Number of real (reference) chromosomes= 58
+1	NC_029256.1	43270923	0
+2	NC_029257.1	35937250	43515904
+3	NC_029258.1	36413819	79691776
+4	NC_029259.1	35502694	116129792
+5	NC_029260.1	29958434	151781376
+6	NC_029261.1	31248787	181927936
+7	NC_029262.1	29697621	213385216
+8	NC_029263.1	28443022	243269632
+9	NC_029264.1	23012720	271843328
+10	NC_029265.1	23207287	294912000
+11	NC_029266.1	29021106	318242816
+12	NC_029267.1	27531856	347340800
+13	NW_015379186.1	8529	375128064
+14	NW_015379187.1	6261	375390208
+15	NW_015379188.1	7140	375652352
+16	NW_015379189.1	20829	375914496
+17	NW_015379190.1	11447	376176640
+18	NW_015379191.1	22545	376438784
+19	NW_015379192.1	6000	376700928
+20	NW_015379193.1	4236	376963072
+21	NW_015379194.1	5510	377225216
+22	NW_015379195.1	10210	377487360
+23	NW_015379196.1	6269	377749504
+24	NW_015379197.1	8197	378011648
+25	NW_015379198.1	13061	378273792
+26	NW_015379199.1	10434	378535936
+27	NW_015379200.1	10686	378798080
+28	NW_015379201.1	10311	379060224
+29	NW_015379202.1	11093	379322368
+30	NW_015379203.1	9603	379584512
+31	NW_015379204.1	9548	379846656
+32	NW_015379205.1	10794	380108800
+33	NW_015379206.1	12884	380370944
+34	NW_015379207.1	31094	380633088
+35	NW_015379208.1	11522	380895232
+36	NW_015379209.1	19971	381157376
+37	NW_015379210.1	10060	381419520
+38	NW_015379211.1	24772	381681664
+39	NW_015379212.1	9889	381943808
+40	NW_015379213.1	17477	382205952
+41	NW_015379214.1	10699	382468096
+42	NW_015379215.1	10422	382730240
+43	NW_015379216.1	12792	382992384
+44	NW_015379217.1	10595	383254528
+45	NW_015379218.1	21421	383516672
+46	NW_015379219.1	10512	383778816
+47	NW_015379220.1	16417	384040960
+48	NW_015379221.1	10901	384303104
+49	NW_015379222.1	15493	384565248
+50	NW_015379223.1	10296	384827392
+51	NW_015379224.1	16676	385089536
+52	NW_015379225.1	7820	385351680
+53	NW_015379226.1	21787	385613824
+54	NW_015379227.1	19457	385875968
+55	NW_015379228.1	14476	386138112
+56	NC_001320.1	134525	386400256
+57	NC_011033.1	490520	386662400
+58	NC_001751.1	2135	387186688
+--sjdbOverhang = 100 taken from the generated genome
+Started loading the genome: Wed Nov  8 05:21:53 2023
+
+Genome: size given as a parameter = 417923447
+SA: size given as a parameter = 3338176359
+/SAindex: size given as a parameter = 1
+Read from SAindex: genomeSAindexNbases=14  nSAi=357913940
+nGenome=417923447;  nSAbyte=3338176359
+GstrandBit=32   SA number of indices=809254874
+Shared memory is not used for genomes. Allocated a private copy of the genome.
+Genome file size: 417923447 bytes; state: good=1 eof=0 fail=0 bad=0
+Loading Genome ... done! state: good=1 eof=0 fail=0 bad=0; loaded 417923447 bytes
+SA file size: 3338176359 bytes; state: good=1 eof=0 fail=0 bad=0
+Loading SA ... done! state: good=1 eof=0 fail=0 bad=0; loaded 3338176359 bytes
+Loading SAindex ... done: 1565873619 bytes
+Finished loading the genome: Wed Nov  8 05:21:56 2023
+
+Processing splice junctions database sjdbN=151615,   sjdbOverhang=100 
+alignIntronMax=alignMatesGapMax=0, the max intron size will be approximately determined by (2^winBinNbits)*winAnchorDistNbins=589824
+Created thread # 1
+Created thread # 2
+Created thread # 3
+Created thread # 4
+Created thread # 5
+Created thread # 6
+Created thread # 7
+BAM sorting: 187193 mapped reads
+BAM sorting bins genomic start loci:
+1	0	24815543
+2	0	41442434
+3	1	22001958
+4	2	599413
+5	2	11959345
+6	2	31256170
+7	3	24668010
+8	4	3230321
+9	4	28487374
+10	5	27530575
+11	6	22843754
+12	7	21632309
+13	8	16073
+14	8	6019285
+15	9	16581858
+16	10	23432852
+Thread #0 end of input stream, nextChar=-1
+Completed: thread #2
+Completed: thread #3
+Completed: thread #7
+Completed: thread #6
+Completed: thread #5
+Completed: thread #1
+Completed: thread #4
+Completed: thread #0
+Joined thread # 1
+Joined thread # 2
+Joined thread # 3
+Joined thread # 4
+Joined thread # 5
+Joined thread # 6
+Joined thread # 7
+Nov 08 07:22:07 ..... started sorting BAM
+Max memory needed for sorting = 774230718
+ALL DONE!
