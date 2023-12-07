@@ -1,3 +1,10 @@
+#### Ally Howard
+# MICB405 GO Term enrichment and visualization
+# Nov 24, 2023
+
+##### All requisite files are in micb405_team8/files/ ####
+# please download all files into the same directory before running the R script
+
 ## Load packages
 library(tidyverse)
 library(topGO)
