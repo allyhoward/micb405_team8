@@ -1,6 +1,11 @@
 ### Vera Pu ###
 ### Upset Plot ###
 ### GOAL: filter out all the upregulated/downregulated genes in each condition and compare their intersections ###
+### Method ###
+* Leveraging the processed data derived from DESeq2, upregulated and downregulated genes in each experimental condition were filtered to compare their intersections. 
+* The groups consisted of upregulated genes in control, low nitrogen, and low-to-high nitrogen in 1 hour (gradient), as well as downregulated genes in the same conditions.
+* Subsequently, these gene sets were organized into feature lists and transformed into two binary data frames. 
+* To visualize the results, the upset() command was employed, generating two UpSet plots for further investigation of gene intersections.
 
 ## Load Packages
 library(tidyverse)
