@@ -1,2 +1,2 @@
 # All data processed from STAR Alignment for each read 
-# Used data for downstream: *Aligned.sortedByCoord.out.bam, *ReadsPerGene.out.tab
+# Used data for downstream: *ReadsPerGene.out.tab
