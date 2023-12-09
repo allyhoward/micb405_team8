@@ -1,7 +1,6 @@
 # Stella Lin 
 # MICB405 DESeq2 Analysis Final Project
 # Nov 24, 2023
-# Preliminary DESeq2 analysis prior to removing recovery data
 
 # Load packages
 suppressPackageStartupMessages(library(tidyverse))
@@ -119,11 +118,11 @@ greatest30_genes <- bind_rows(top15_genes, bot15_genes) %>%
 
 order_30genes <- greatest30_genes %>%
   select(gene_id) %>%
-  pull()
+  pull() # Pulling top 30 names
 
 CSV <- write_csv(res_filtered_final, "nitrogen_results.csv")
-csv_top <- write.csv(top10_genes, "nitrogen_top_results.csv")
-csv_bot <- write.csv(bot10_genes, "nitrogen_bot_results.csv")
+csv_top <- write.csv(top15_genes, "nitrogen_top_results.csv")
+csv_bot <- write.csv(bot15_genes, "nitrogen_bot_results.csv")
 
 #### Plots ####
 # Volcano plots
@@ -141,16 +140,19 @@ Mean_Dispersion <- plotDispEsts(dds)
 
 
 # DESeq plot
-DESeq_plot <- ggplot(greatest30_genes, aes(x = gene_id, y = log2FoldChange, fill = up_down)) +
+sorted_30_genes <- greatest30_genes[order(-greatest30_genes$log2FoldChange), ] # sort by log2 Fold Change
+
+DESeq_plot <- ggplot(sorted_30_genes, aes(x = gene_id, y = log2FoldChange, fill = up_down)) +
   geom_bar(stat="identity") +
-  geom_errorbar(aes(ymin = log2FoldChange - lfcSE, ymax = log2FoldChange + lfcSE), width = 0.4) +  # Adjust width as needed
+  geom_errorbar(aes(ymin = log2FoldChange - lfcSE, ymax = log2FoldChange + lfcSE), width = 0.4) +
   scale_fill_manual(values = c("#9FE2BF", "#F08080"), name = "Regulation") +
-  labs(title = "DESeq Bar Plot",
+  labs(title = "Up/Down Regulation of Gene ID's",
        x = "Gene ID",
        y = "log2(Fold Change)",
        fill = "Regulation") +
   coord_flip() +
-  geom_text(aes(label = sprintf("%.2f", log2FoldChange)), vjust = -0.5, size = 3) 
+  geom_text(aes(label = sprintf("%.2f", log2FoldChange)), vjust = -0.5, size = 3)
 
 
 DESeq_plot
+
